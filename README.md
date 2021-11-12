@@ -1,6 +1,6 @@
 # spotty
 
-**Mac only.**
+:warning: **Mac only.** :warning:
 
 Easy management of your favorite songs on Spotify from your terminal.
 
