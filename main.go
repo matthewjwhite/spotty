@@ -71,7 +71,7 @@ func main() {
 
 	case "play":
 		if len(os.Args) <= 2 {
-			fmt.Fprintln(os.Stderr, err)
+			fmt.Fprintln(os.Stderr, "Must specify search.")
 			os.Exit(argError)
 		}
 
