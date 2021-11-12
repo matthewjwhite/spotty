@@ -20,49 +20,53 @@ const (
 type exitStatus int
 
 func main() {
+	os.Exit(int(run()))
+}
+
+func run() exitStatus {
 	if len(os.Args) < 2 {
 		fmt.Fprintln(os.Stderr, "Must specify command.")
-		os.Exit(int(argError))
+		return argError
 	}
 
 	homeDir, err := os.UserHomeDir()
 	if err != nil {
 		fmt.Fprintln(os.Stderr, err)
-		os.Exit(int(homeError))
+		return homeError
 	}
 
 	db, err := db.New(homeDir + "/.spotty")
 	if err != nil {
 		fmt.Fprintln(os.Stderr, err)
-		os.Exit(int(dbError))
+		return dbError
 	}
 	defer db.Close()
 
 	if err = db.Init(); err != nil {
 		fmt.Fprintln(os.Stderr, err)
-		os.Exit(int(dbError))
+		return dbError
 	}
 
 	switch os.Args[1] {
 
 	case "pp":
-		os.Exit(int(playPause()))
+		return playPause()
 
 	case "next":
-		os.Exit(int(next()))
+		return next()
 
 	case "save":
-		os.Exit(int(save(db)))
+		return save(db)
 
 	case "play":
-		os.Exit(int(play(db)))
+		return play(db)
 
 	case "list":
-		os.Exit(int(list(db)))
+		return list(db)
 
 	default:
 		fmt.Fprintln(os.Stderr, "Invalid command.")
-		os.Exit(int(argError))
+		return argError
 	}
 }
 
