@@ -2,7 +2,7 @@
 
 :warning: **Mac only.** :warning:
 
-Easy management of your favorite songs on Spotify from your terminal.
+Easy access from your terminal to your favorite Spotify songs.
 
 No API token required, just the Spotify client.
 
