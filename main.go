@@ -64,6 +64,9 @@ func run() exitStatus {
 	case "list":
 		return list(db)
 
+	case "get":
+		return get()
+
 	default:
 		fmt.Fprintln(os.Stderr, "Invalid command.")
 		return argError
@@ -76,6 +79,18 @@ func playPause() exitStatus {
 		fmt.Fprintln(os.Stderr, err)
 		return spotifyError
 	}
+
+	return success
+}
+
+func get() exitStatus {
+	track, err := spotify.Current()
+	if err != nil {
+		fmt.Fprintln(os.Stderr, err)
+		return spotifyError
+	}
+
+	fmt.Println(track)
 
 	return success
 }
