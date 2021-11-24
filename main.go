@@ -129,7 +129,7 @@ func list(db db.DB) exitStatus {
 	}
 
 	for _, t := range tracks {
-		fmt.Println(t.Data)
+		fmt.Println(t)
 	}
 
 	return success
