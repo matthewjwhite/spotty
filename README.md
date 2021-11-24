@@ -33,7 +33,7 @@ I would choose to play the song with either:
 1. `spotty play touch of grey`
 1. `spotty touch%grey`
 
-It's powered by a database, so use whatever is compatible with `LIKE` will work.
+It's powered by a SQL database, so I could use whatever is compatible with `LIKE`.
 
 I could skip to the next track in context with `spotty next`.
 
