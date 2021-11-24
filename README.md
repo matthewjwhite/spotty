@@ -38,3 +38,5 @@ It's powered by a SQL database, so I could use whatever is compatible with `LIKE
 I could skip to the next track in context with `spotty next`.
 
 Or toggle play/pause with `spotty pp`.
+
+To get the current track, `spotty get`.
